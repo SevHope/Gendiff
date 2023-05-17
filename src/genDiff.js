@@ -1,7 +1,11 @@
 import { readFileSync } from 'node:fs';
 import _ from 'lodash';
+import path from 'node:path';
+import { cwd } from 'node:process';
 
-export default (filepath1, filepath2) => {
+export default (file1, file2) => {
+  const filepath1 = path.resolve('__fixtures__', file1);
+  const filepath2 = path.resolve('__fixtures__', file2);
   const data1 = readFileSync(filepath1, 'utf-8');
   const data2 = readFileSync(filepath2, 'utf-8');
   const dataParse1 = JSON.parse(data1);
