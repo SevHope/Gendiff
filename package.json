@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/SevHope/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/SevHope/frontend-project-46/actions)",
-  "main": "index.js",
+  "main": "src/genDiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sevastianova",
   "license": "ISC",
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "bin/bin-genDiff.js"
   },
   "dependencies": {
-    "commander": "^10.0.1"
+    "commander": "^10.0.1",
+    "lodash": "^4.17.21"
   }
 }
