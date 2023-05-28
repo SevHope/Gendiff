@@ -12,7 +12,7 @@ const getPath = (file) => {
   return filepath;
 };
 
-export default (file1, file2) => {
+const genDiff = (file1, file2) => {
   const filepath1 = getPath(file1);
   const filepath2 = getPath(file2);
   const data1 = readFileSync(filepath1, 'utf-8');
@@ -44,3 +44,4 @@ export default (file1, file2) => {
   const newResult = stringResult.replace(/,/g, '');
   return `{\n${newResult}}`;
 };
+export default genDiff;
