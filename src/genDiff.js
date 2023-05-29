@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import _ from 'lodash';
 import path from 'node:path';
 import { cwd } from 'node:process';
+import fs from 'fs';
 
 const getPath = (file) => {
   if ((String(file)).startsWith('__', '/', '.')) {
@@ -37,8 +38,7 @@ const genDiff = (file1, file2) => {
     }
     if (_.has(dataParse2, key) && !_.has(dataParse1, key) && !result.includes(key)) {
       result.push(`+ ${key}: ${dataParse2[key]} \n`);
-    }
-  }
+    }}
   const uniqResult = _.uniq(result);
   const stringResult = String(uniqResult);
   const newResult = stringResult.replace(/,/g, '');
