@@ -1,5 +1,8 @@
-# Automatic tests
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/SevHope/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/SevHope/frontend-project-46/actions)
+<a href="https://codeclimate.com/github/SevHope/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/f250394cb0a72cee3a55/maintainability" /></a>
+<a href="https://codeclimate.com/github/SevHope/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f250394cb0a72cee3a55/test_coverage" /></a>
+<a href="https://github.com/SevHope/frontend-project-46/actions/workflows/nodejs.yml/badge.svg">
 
-After completing all the steps in the project, automatic tests will become available to you. Tests are run on each commit - once all tasks in the Hexlet interface are completed, make a commit, and the tests will run automatically.
-
-The hexlet-check.yml file is responsible for running these tests - do not delete this file, edit it, or rename the repository.
+<h1>GenDiff</h1>
+<p><a href="https://asciinema.org/a/585459" target="_blank"><img src="https://asciinema.org/a/585459.svg" /></a></p>
