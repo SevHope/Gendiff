@@ -37,8 +37,7 @@ const genDiff = (file1, file2) => {
       result.push(`+ ${key}: ${dataParse2[key]} \n`);
     }
     if (_.has(dataParse2, key) && !_.has(dataParse1, key) && !result.includes(key)) {
-      result.push(`+ ${key}: ${dataParse2[key]} \n`);
-    }}
+      result.push(`+ ${key}: ${dataParse2[key]} \n`);}}
   const uniqResult = _.uniq(result);
   const stringResult = String(uniqResult);
   const newResult = stringResult.replace(/,/g, '');
