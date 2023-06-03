@@ -1,3 +1,5 @@
+rules:
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
 env:
   browser: true
   es2021: true
@@ -6,4 +8,3 @@ overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-rules: {}

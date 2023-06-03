@@ -1,8 +1,6 @@
 import { readFileSync } from 'node:fs';
 import _ from 'lodash';
 import path from 'node:path';
-import { cwd } from 'node:process';
-import fs from 'fs';
 
 const getPath = (file) => {
   if ((String(file)).startsWith('__', '/', '.')) {

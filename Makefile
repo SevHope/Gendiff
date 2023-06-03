@@ -10,7 +10,7 @@ gendiff:
 		node bin/bin-genDiff.js
 
 test:
-		node __fixtures__/test.js
+		npx --experimental-vm-modules jest
 
 test-coverage:
 		npx jest --coverage
