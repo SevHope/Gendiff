@@ -1,9 +1,7 @@
 #!/bin/env node
 
-import { Command } from 'commander/esm.mjs';
+import { program } from 'commander';
 import genDiff from '../src/genDiff.js';
-
-const program = new Command();
 
 program
   .description('Compares two configuration files and shows a difference.')

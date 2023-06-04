@@ -1,5 +1,10 @@
 rules:
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
+  no-console: 0
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+    - error
+    - ignorePackages
+    - js: always
 env:
   browser: true
   es2021: true
