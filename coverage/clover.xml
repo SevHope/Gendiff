@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685864689364" clover="3.2.0">
-  <project timestamp="1685864689364" name="All files">
-    <metrics statements="32" coveredstatements="30" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="2" elements="58" coveredelements="55" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
+<coverage generated="1685903197012" clover="3.2.0">
+  <project timestamp="1685903197013" name="All files">
+    <metrics statements="32" coveredstatements="30" conditionals="20" coveredconditionals="19" methods="3" coveredmethods="3" elements="55" coveredelements="52" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
     <file name="genDiff.js" path="/home/nadya/frontend-project-46/src/genDiff.js">
-      <metrics statements="32" coveredstatements="30" conditionals="24" coveredconditionals="23" methods="2" coveredmethods="2"/>
+      <metrics statements="32" coveredstatements="30" conditionals="20" coveredconditionals="19" methods="3" coveredmethods="3"/>
       <line num="5" count="1" type="stmt"/>
       <line num="6" count="2" type="cond" truecount="1" falsecount="1"/>
       <line num="7" count="0" type="stmt"/>
@@ -23,19 +23,19 @@
       <line num="24" count="1" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
       <line num="26" count="1" type="stmt"/>
-      <line num="27" count="7" type="cond" truecount="6" falsecount="0"/>
+      <line num="27" count="7" type="cond" truecount="5" falsecount="0"/>
       <line num="28" count="2" type="stmt"/>
-      <line num="30" count="7" type="cond" truecount="5" falsecount="0"/>
+      <line num="30" count="7" type="cond" truecount="4" falsecount="0"/>
       <line num="31" count="2" type="stmt"/>
-      <line num="33" count="7" type="cond" truecount="6" falsecount="0"/>
+      <line num="33" count="7" type="cond" truecount="5" falsecount="0"/>
       <line num="34" count="2" type="stmt"/>
       <line num="35" count="2" type="stmt"/>
-      <line num="37" count="7" type="cond" truecount="5" falsecount="0"/>
+      <line num="37" count="7" type="cond" truecount="4" falsecount="0"/>
       <line num="38" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
       <line num="41" count="1" type="stmt"/>
       <line num="42" count="1" type="stmt"/>
       <line num="43" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
