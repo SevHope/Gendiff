@@ -7,3 +7,4 @@
 
 <h1>GenDiff</h1>
 <p><a href="https://asciinema.org/a/585459" target="_blank"><img src="https://asciinema.org/a/585459.svg" /></a></p>
+<script async id="asciicast-590422" src="https://asciinema.org/a/590422.js"></script>
