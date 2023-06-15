@@ -1,47 +1,18 @@
-import { readFileSync } from 'node:fs';
-import _ from 'lodash';
+import fs from 'fs';
 import path from 'path';
+import diffTree from './diffTree.js';
+import parse from './parser.js';
+import getFormat from './formatters/format.js';
 
-const getPath = (file) => {
-  if ((String(file)).startsWith('__', '/', '.')) {
-    const filepath = path.resolve(file);
-    return filepath;
-  }
-  const filepath = path.resolve('__fixtures__', file);
-  return filepath;
-};
+const getPath = (filepath) => path.resolve('__fixtures__', filepath);
+const getFileData = (filepath) => fs.readFileSync(getPath(filepath), 'utf8');
+const getExtname = (filepath) => path.extname(filepath);
 
-const genDiff = (file1, file2) => {
-  const filepath1 = getPath(file1);
-  const filepath2 = getPath(file2);
-  const data1 = readFileSync(filepath1, 'utf-8');
-  const data2 = readFileSync(filepath2, 'utf-8');
-  const dataParse1 = JSON.parse(data1);
-  const dataParse2 = JSON.parse(data2);
-  const keys1 = Object.keys(dataParse1);
-  const keys2 = Object.keys(dataParse2);
-  const allKeys = [...keys1, ...keys2];
-  const sortedAllKeys = _.sortBy(allKeys);
-  const result = [];
-  sortedAllKeys.forEach((key) => {
-    if (_.has(dataParse1, key) && _.has(dataParse2, key) && dataParse1[key] === dataParse2[key]) {
-      result.push(`     ${key}: ${dataParse1[key]} \n`);
-    }
-    if (_.has(dataParse1, key) && !_.has(dataParse2, key)) {
-      result.push(`   - ${key}: ${dataParse1[key]} \n`);
-    }
-    if (_.has(dataParse1, key) && _.has(dataParse2, key) && dataParse1[key] !== dataParse2[key]) {
-      result.push(`   - ${key}: ${dataParse1[key]} \n`);
-      result.push(`   + ${key}: ${dataParse2[key]} \n`);
-    }
-    if (_.has(dataParse2, key) && !_.has(dataParse1, key)) {
-      result.push(`   + ${key}: ${dataParse2[key]} \n`);
-    }
-  });
-  const uniqResult = _.uniq(result);
-  const stringResult = String(uniqResult);
-  const newResult = stringResult.replace(/,/g, '');
-  return `{\n${newResult}}`;
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
+  const data1 = parse(getFileData(filepath1), getExtname(filepath1));
+  const data2 = parse(getFileData(filepath2), getExtname(filepath2));
+  const format = getFormat(formatName);
+  return format(diffTree(data1, data2));
 };
 
 export default genDiff;

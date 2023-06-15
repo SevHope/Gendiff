@@ -7,11 +7,9 @@ program
   .description('Compares two configuration files and shows a difference.')
   .helpOption('-h, --help', 'display help for command')
   .version('-V, --version')
-  .option('-f, --format <type>', 'output format')
+  .option('-f, --format <type>', 'output format', 'stylish')
   .argument('<filepath1>', 'first configuration file')
   .argument('<filepath2>', 'second configuration file')
-  .action((filepath1, filepath2) => {
-    console.log(genDiff(filepath1, filepath2));
-  });
+  .action((filepath1, filepath2) => console.log(genDiff(filepath1, filepath2, `${program.opts().format}`)));
 
 program.parse();
