@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import diffTree from './diffTree.js';
 import parse from './parser.js';
-import getFormat from './formatters/format.js';
+import getFormat from './formatters/index.js';
 
 const getPath = (filepath) => path.resolve('__fixtures__', filepath);
 const getFileData = (filepath) => fs.readFileSync(getPath(filepath), 'utf8');
