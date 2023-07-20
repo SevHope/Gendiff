@@ -13,3 +13,5 @@
 <p><a href="https://asciinema.org/a/590422" target="_blank"><img src="https://asciinema.org/a/590422.svg" /></a></p>
 <h3>Stylish format</h3>
 <p><a href="https://asciinema.org/a/591734" target="_blank"><img src="https://asciinema.org/a/591734.svg" /></a></p>
+<h3>Plain format</h3>
+<p><a href="https://asciinema.org/a/597774" target="_blank"><img src="https://asciinema.org/a/597774.svg" /></a></p>
