@@ -1,32 +1,19 @@
-import _ from 'lodash';
+import { readFileSync } from 'node:fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { test, expect } from '@jest/globals';
+import genDiff from '../src/genDiff.js';
 
-const stringifyObj = (obj) => {
-  if (_.isObject(obj)) {
-    return '[complex value]';
-  }
-  return typeof obj === 'string' ? `'${obj}'` : String(obj);
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const plain = (obj, key = '') => {
-  const result = obj
-    .filter((node) => node.type !== 'unchanged')
-    .flatMap((node) => {
-      const keys = [...key, node.key];
-      const path = keys.join('.');
-      switch (node.type) {
-        case 'nested':
-          return plain(node.children, keys);
-        case 'added':
-          return `Property '${path}' was added with value: ${stringifyObj(node.children)}`;
-        case 'deleted':
-          return `Property '${path}' was removed`;
-        case 'changed':
-          return `Property '${path}' was updated. From ${stringifyObj(node.children1)} to ${stringifyObj(node.children2)}`;
-        default:
-          return undefined;
-      }
-    }).join('\n');
-  return result;
-};
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-export default plain;
+const result = readFile('resultPlain.txt');
+
+test('genDiff', () => {
+  const filepath3 = getFixturePath('file3.json');
+  const filepath4 = getFixturePath('file4.json');
+  expect(genDiff(filepath3, filepath4, 'plain')).toBe(result);
+});
