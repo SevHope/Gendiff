@@ -1,16 +1,14 @@
 install:
-		npm install
-lint:
-		npx eslint .
-
-publish:
-		npm publish --dry-run
+	npm ci
 
 gendiff:
-		node bin/bin-genDiff.js
+	node bin/genDiff.js
+
+lint:
+	npx eslint .
 
 test:
-		npx --experimental-vm-modules jest
+	npx --experimental-vm-modules jest
 
 test-coverage:
-		npx jest --coverage
+	npx jest --coverage

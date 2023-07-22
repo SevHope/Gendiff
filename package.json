@@ -10,7 +10,7 @@
   "author": "Sevastianova",
   "license": "ISC",
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "bin/genDiff.js"
   },
   "dependencies": {
     "@jest/globals": "^29.5.0",
