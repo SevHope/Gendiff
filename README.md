@@ -9,10 +9,10 @@
 <h3>The tool compares two configuration files and shows a difference.</h3>
 <h2>Instalation</h2>
 <h3><ul>
-<li>git clone https://github.com/SevHope/frontend-project-46</li>
+<li>git clone git@github.com:SevHope/frontend-project-46.git</li>
 <li>cd frontend-project-46</li>
 <li>make install</li>
-<li>npm install</li>
+<li>gendiff -h</li>
 </ul>
 </h3>
 <h2>Program help information</h2>
