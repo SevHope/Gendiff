@@ -8,7 +8,7 @@ export default (format) => {
     case 'plain':
       return plain;
     case 'json':
-      return JSON.stringify();
+      return JSON.stringify;
     default:
       throw new Error(`Unknown format name: '${format}'!`);
   }
