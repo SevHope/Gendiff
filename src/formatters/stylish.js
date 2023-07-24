@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const getIndent = (depth, leftShift = 0, spacesCount = 4) => ' '.repeat(spacesCount * depth - leftShift);
+const getIndent = (depth, leftShift = 2, spacesCount = 4) => ' '.repeat(spacesCount * depth - leftShift);
 const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(spacesCount * depth - spacesCount);
 
 const stringify = (value, depth) => {
@@ -8,7 +8,7 @@ const stringify = (value, depth) => {
     return `${value}`;
   }
 
-  const currentIndent = getIndent(depth);
+  const currentIndent = getIndent(depth, 0);
   const bracketIndent = getBracketIndent(depth);
   const lines = Object.entries(value).map(([key, val]) => `${currentIndent}${key}: ${stringify(val, depth + 1)}`);
 
@@ -21,7 +21,7 @@ const stylish = (diff) => {
       return `${data}`;
     }
 
-    const currentIndent = getIndent(depth, 2);
+    const currentIndent = getIndent(depth);
     const bracketIndent = getBracketIndent(depth);
     const lines = data.map((node) => {
       switch (node.type) {
