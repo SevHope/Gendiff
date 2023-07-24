@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
 const stringify = (value) => {
-  if (_.isObject(value)) {
+  if (_.isObject(value) && value !== null) {
     return '[complex value]';
   }
   if (typeof value === 'string') {
     return `'${value}'`;
   }
-  return value;
+  return String(value);
 };
 
 const plain = (dataToFormat) => {
