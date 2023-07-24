@@ -7,7 +7,10 @@
 
 <h1>GenDiff</h1>
 <h3>The tool compares two configuration files and shows a difference.</h3>
+<p>Support for different input formats: yaml, json</p>
+<p>Report generation as plain text, stylish and json</p>
 <h2>Instalation</h2>
+<p>Make sure you have installed Node.js version 13 or higher.</p>
 <h3><ul>
 <li>git clone git@github.com:SevHope/frontend-project-46.git</li>
 <li>cd frontend-project-46</li>

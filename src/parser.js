@@ -1,6 +1,6 @@
 import { load } from 'js-yaml';
 
-const getParsedContent = (data, ext) => {
+const parse = (data, ext) => {
   switch (ext) {
     case '.json':
       return JSON.parse(data);
@@ -13,4 +13,4 @@ const getParsedContent = (data, ext) => {
   }
 };
 
-export default getParsedContent;
+export default parse;
