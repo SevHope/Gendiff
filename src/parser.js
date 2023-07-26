@@ -1,15 +1,14 @@
 import { load } from 'js-yaml';
 
-const parse = (data, ext) => {
-  switch (ext) {
-    case '.json':
+const parse = (data, type) => {
+  switch (type) {
+    case 'json':
       return JSON.parse(data);
-    case '.yaml':
-      return load(data);
-    case '.yml':
+    case 'yaml':
+    case 'yml':
       return load(data);
     default:
-      throw new Error(`File extension ${ext} is incorrect!`);
+      throw new Error(`Data type ${type} is incorrect!`);
   }
 };
 

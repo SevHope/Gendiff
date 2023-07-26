@@ -6,7 +6,7 @@ import getFormat from './formatters/index.js';
 
 const getPath = (filepath) => path.resolve('__fixtures__', filepath);
 const getFileData = (filepath) => fs.readFileSync(getPath(filepath), 'utf8');
-const getExtname = (filepath) => path.extname(filepath);
+const getExtname = (filepath) => path.extname(filepath).substring(1);
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = parse(getFileData(filepath1), getExtname(filepath1));
