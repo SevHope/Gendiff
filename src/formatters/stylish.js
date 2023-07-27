@@ -28,8 +28,8 @@ const stylish = (diff, depth = 1) => {
         return `${currentIndent}  ${node.key}: ${stringify(node.value, depth + 1)}`;
       case 'changed':
         return [
-          `${currentIndent}- ${node.key}: ${stringify(node.oldValue, depth + 1)}`,
-          `${currentIndent}+ ${node.key}: ${stringify(node.newValue, depth + 1)}`,
+          `${currentIndent}- ${node.key}: ${stringify(node.firstValue, depth + 1)}`,
+          `${currentIndent}+ ${node.key}: ${stringify(node.secondValue, depth + 1)}`,
         ];
       case 'nested':
         return `${currentIndent}  ${node.key}: ${stylish(node.children, depth + 1)}`;

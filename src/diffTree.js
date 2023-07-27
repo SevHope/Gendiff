@@ -19,8 +19,8 @@ const makeDiffTree = (data1, data2) => {
     if (value1 !== value2) {
       return {
         key,
-        oldValue: value1,
-        newValue: value2,
+        firstValue: value1,
+        secondValue: value2,
         type: 'changed',
       };
     }

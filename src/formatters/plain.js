@@ -26,7 +26,7 @@ const plain = (dataToFormat) => {
         case 'unchanged':
           return [];
         case 'changed':
-          return `Property '${currentPath}' was updated. From ${stringify(obj.oldValue)} to ${stringify(obj.newValue)}`;
+          return `Property '${currentPath}' was updated. From ${stringify(obj.firstValue)} to ${stringify(obj.secondValue)}`;
         default:
           throw new Error(`Plain formatting failed. Unknown type: ${obj.type}`);
       }
