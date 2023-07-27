@@ -7,7 +7,7 @@ const makeDiffTree = (data1, data2) => {
     const value1 = data1[key];
     const value2 = data2[key];
 
-    if (_.isObject(value1) && _.isObject(value2)) {
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
       return { key, children: makeDiffTree(value1, value2), type: 'nested' };
     }
     if (!_.has(data1, key)) {
@@ -24,7 +24,6 @@ const makeDiffTree = (data1, data2) => {
         type: 'changed',
       };
     }
-
     return { key, value: value1, type: 'unchanged' };
   });
 };
