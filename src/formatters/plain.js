@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const stringify = (value) => {
-  if (_.isObject(value)) {
+  if (_.isObject(value) && value !== null) {
     return '[complex value]';
   }
   if (typeof value === 'string') {
@@ -11,13 +11,15 @@ const stringify = (value) => {
 };
 
 const plain = (dataToFormat) => {
-  const iter = (data, path = '') => {
+  const getPropertyName = (property, parents) => [...parents, property].join('.');
+
+  const iter = (data, parents = []) => {
     const lines = data.flatMap((obj) => {
-      const currentPath = path ? `${path}.${obj.key}` : obj.key;
+      const currentPath = getPropertyName(obj.key, parents);
 
       switch (obj.type) {
         case 'nested': {
-          return iter(obj.children, currentPath);
+          return iter(obj.children, [...parents, obj.key]);
         }
         case 'deleted':
           return `Property '${currentPath}' was removed`;
@@ -32,7 +34,7 @@ const plain = (dataToFormat) => {
       }
     });
 
-    const result = [...lines].join('\n');
+    const result = lines.join('\n');
     return result;
   };
 
