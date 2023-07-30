@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import formatter from './formatters/index.js';
+import format from './formatters/index.js';
 import diffTree from './diffTree.js';
 import parse from './parser.js';
 
@@ -12,7 +12,7 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = parse(getFileData(filepath1), getExtname(filepath1));
   const data2 = parse(getFileData(filepath2), getExtname(filepath2));
   const diff = diffTree(data1, data2);
-  return formatter(diff, formatName);
+  return format(diff, formatName);
 };
 
 export default genDiff;
